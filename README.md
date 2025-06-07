@@ -5,7 +5,7 @@
 ### Exploiratory Data Analysis(EDA) - Run EDA queries to understand the data
 ### Business Analysis - Use SQL to answer specific business oriented questions and derive insights from the data
 # Dataset Creation
-### 1.order_details.csv
+### 1. order_details.csv
 Contains data about the sold pizza quantities according to their IDs.
 ``` sql
 CREATE TABLE `order_details` (
@@ -15,7 +15,7 @@ CREATE TABLE `order_details` (
   `quantity` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-### 2.orders.csv
+### 2. orders.csv
 Contain data of all the order`s date and time.
 ``` sql
 CREATE TABLE `orders` (
@@ -24,7 +24,7 @@ CREATE TABLE `orders` (
   `time` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-### 3.pizza_types.csv
+### 3. pizza_types.csv
 Contains all the types of pizzas available for selling wrt to their category.
 ``` sql
 CREATE TABLE `pizza_types` (
@@ -34,7 +34,7 @@ CREATE TABLE `pizza_types` (
   `ingredients` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-### 4.pizzas.csv
+### 4. pizzas.csv
 contains size and price of pizzas.
 ``` sql
 CREATE TABLE `pizzas` (
