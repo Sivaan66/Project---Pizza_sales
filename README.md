@@ -24,7 +24,7 @@ CREATE TABLE `orders` (
   `time` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-### pizza_types.csv
+### 3.pizza_types.csv
 Contains all the types of pizzas available for selling wrt to their category.
 ``` sql
 CREATE TABLE `pizza_types` (
@@ -34,7 +34,7 @@ CREATE TABLE `pizza_types` (
   `ingredients` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-### pizzas.csv
+### 4.pizzas.csv
 contains size and price of pizzas.
 ``` sql
 CREATE TABLE `pizzas` (
@@ -46,14 +46,14 @@ CREATE TABLE `pizzas` (
 ```
 
 # Questions And Queries
-### Retrieve the total number of orders placed.
+### 1.Retrieve the total number of orders placed.
 ``` sql
 SELECT 
     COUNT(order_id)
 FROM
     orders;
 ```
-### Calculate the total revenue generated from pizza sales.
+### 2.Calculate the total revenue generated from pizza sales.
 ``` sql
 SELECT 
     ROUND(SUM(order_details.quantity * pizzas.price),
@@ -63,7 +63,7 @@ FROM
         JOIN
     pizzas ON order_details.pizza_id = pizzas.pizza_id;
 ``` 
-### Identify the highest-priced pizza name.
+### 3.Identify the highest-priced pizza name.
 ``` sql
 SELECT 
     pizza_types.name, pizzas.price
@@ -74,7 +74,7 @@ FROM
 ORDER BY 2 DESC
 LIMIT 1;
 ``` 
-### Identify the most common pizza size ordered.
+### 4.Identify the most common pizza size ordered.
 ``` sql
 SELECT 
     pizzas.size, SUM(order_details.quantity)
@@ -86,7 +86,7 @@ GROUP BY pizzas.size
 ORDER BY 2 DESC
 LIMIT 1;
 ``` 
-### List the top 5 most ordered pizza types along with their quantities.
+### 5.List the top 5 most ordered pizza types along with their quantities.
 ``` sql
 SELECT 
     pizza_types.name,
@@ -101,7 +101,7 @@ GROUP BY pizza_types.name
 ORDER BY 2 DESC
 LIMIT 5;
 ```
-### Join the necessary tables to find the total quantity of each pizza category ordered.
+### 6.Join the necessary tables to find the total quantity of each pizza category ordered.
 ``` sql
 SELECT 
     pizza_types.category,
@@ -115,7 +115,7 @@ FROM
 GROUP BY pizza_types.category
 ORDER BY 2 DESC;
 ```
-### Determine the distribution of orders by hour of the day.
+### 7.Determine the distribution of orders by hour of the day.
 ``` sql
 # indicates in which hour of the day most of the customers coming to the store
 SELECT 
@@ -125,7 +125,7 @@ FROM
 GROUP BY hours
 ORDER BY 2 DESC;
 ```
-### Group the orders by date and calculate the average number of pizzas ordered per day.
+### 8.Group the orders by date and calculate the average number of pizzas ordered per day.
 ``` sql
 SELECT 
     ROUND(AVG(orders_per_day), 0)
@@ -137,7 +137,7 @@ FROM
     JOIN order_details ON orders.order_id = order_details.order_id
     GROUP BY orders.date) AS avg_orders;
 ```
-### Determine the top 3 most ordered pizza types based on revenue
+### 9.Determine the top 3 most ordered pizza types based on revenue
 ``` sql
    SELECT 
     pizza_types.pizza_type_id,
@@ -153,7 +153,7 @@ GROUP BY pizza_types.pizza_type_id
 ORDER BY 2 DESC
 limit 3;
 ```
-### Calculate the percentage contribution of each pizza category to total revenue.
+### 10.Calculate the percentage contribution of each pizza category to total revenue.
 ``` sql
 SELECT 
     pizza_types.category,
@@ -172,7 +172,7 @@ FROM
     pizza_types ON pizza_types.pizza_type_id = pizzas.pizza_type_id
 GROUP BY pizza_types.category;
 ```
-### Analyze the cumulative revenue generated over time.
+### 11.Analyze the cumulative revenue generated over time.
 ``` sql
 with revenue_day as (select orders.date as dates, sum(order_details.quantity * pizzas.price) revenue
 from orders
@@ -185,7 +185,7 @@ group by orders.date)
 select  dates,round(revenue,2), round(sum(revenue) over (order by dates),2) over_time_revenue
 from revenue_day;
 ```
-### Determine the top 3 most ordered pizza types based on revenue for each pizza category.
+### 12.Determine the top 3 most ordered pizza types based on revenue for each pizza category.
 ``` sql
 SELECT 
     pizza_types.category,
