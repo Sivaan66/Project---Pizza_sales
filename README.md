@@ -2,7 +2,7 @@
 ### A Project work to showcase my in_hand experience and knowlwdge about SQL. I have used MySQL DBMS to perform my task and run all the quesries. Here this project depicts all about the sales of a Pizza selling company. EDA tasks performed to get all the data of sales which can help the company detect patterns in it and improve their sales and customer engagements.
 # Objectives
 ### Database - Create a databse withh all the given data
-### Exploiratory Data Analysis(EDA) - Ran EDA queries to understand the data
+### Exploiratory Data Analysis(EDA) - Run EDA queries to understand the data
 ### Business Analysis - Use SQL to answer specific business oriented questions and derive insights from the data
 # Dataset Creation
 ### 1.order_details.csv
