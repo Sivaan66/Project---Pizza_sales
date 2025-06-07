@@ -17,7 +17,6 @@ CREATE TABLE `order_details` (
 ```
 ### 2.orders.csv
 Contain data of all the order`s date and time.
-<a name="orderd.csv"></a>
 ``` sql
 CREATE TABLE `orders` (
   `order_id` int DEFAULT NULL,
