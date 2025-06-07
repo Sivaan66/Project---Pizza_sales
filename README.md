@@ -3,9 +3,9 @@
 
 ## All The Queries
 ### Retrieve the total number of orders placed.
-''' sql
+``` sql
 SELECT 
     COUNT(order_id)
 FROM
     orders;
-'''
+```
