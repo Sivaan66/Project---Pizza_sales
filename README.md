@@ -163,6 +163,7 @@ ORDER BY 2 DESC
 limit 3;
 ```
 ### 10.Calculate the percentage contribution of each pizza category to total revenue.
+tHE ORDER OF Pizza categories according to their contribution towards total revenue.
 ``` sql
 SELECT 
     pizza_types.category,
@@ -182,6 +183,8 @@ FROM
 GROUP BY pizza_types.category;
 ```
 ### 11.Analyze the cumulative revenue generated over time.
+Cumulative revenue gives the data about linear growth of the company over time. This tells if company is growing over tkme or we need to do some changes according to the data calculated before.
+
 ``` sql
 with revenue_day as (select orders.date as dates, sum(order_details.quantity * pizzas.price) revenue
 from orders
