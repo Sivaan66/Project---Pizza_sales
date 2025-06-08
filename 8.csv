@@ -1,0 +1,2 @@
+"ROUND(AVG(orders_per_day), 0)"
+138
