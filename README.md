@@ -47,6 +47,7 @@ CREATE TABLE `pizzas` (
 
 # Questions And Queries
 ### 1.Retrieve the total number of orders placed.
+It will give the data of overall orders that placed in the whole dataset.
 ``` sql
 SELECT 
     COUNT(order_id)
@@ -54,6 +55,7 @@ FROM
     orders;
 ```
 ### 2.Calculate the total revenue generated from pizza sales.
+All tptal revenue generated fromm all the orders placed.
 ``` sql
 SELECT 
     ROUND(SUM(order_details.quantity * pizzas.price),
@@ -64,6 +66,7 @@ FROM
     pizzas ON order_details.pizza_id = pizzas.pizza_id;
 ``` 
 ### 3.Identify the highest-priced pizza name.
+It will give the name of highest priced pizza from the dataset.
 ``` sql
 SELECT 
     pizza_types.name, pizzas.price
@@ -75,6 +78,7 @@ ORDER BY 2 DESC
 LIMIT 1;
 ``` 
 ### 4.Identify the most common pizza size ordered.
+Knowing most common sized pizza orderd can give some insights to generate more pizza sales.
 ``` sql
 SELECT 
     pizzas.size, SUM(order_details.quantity)
@@ -87,6 +91,7 @@ ORDER BY 2 DESC
 LIMIT 1;
 ``` 
 ### 5.List the top 5 most ordered pizza types along with their quantities.
+Thiss tells the top five most loved pizza types that customers ordered. Knowing the size and type of loved pizzas will help boost the sales.
 ``` sql
 SELECT 
     pizza_types.name,
@@ -101,7 +106,8 @@ GROUP BY pizza_types.name
 ORDER BY 2 DESC
 LIMIT 5;
 ```
-### 6.Join the necessary tables to find the total quantity of each pizza category ordered.
+### 6.Find the total quantity of each pizza category ordered.
+It says the category of pizza orders the most i.e. If people love Classic, Chickesns, or anything else.
 ``` sql
 SELECT 
     pizza_types.category,
@@ -116,6 +122,7 @@ GROUP BY pizza_types.category
 ORDER BY 2 DESC;
 ```
 ### 7.Determine the distribution of orders by hour of the day.
+Give the insights that in which time of the day most of the people come to order and eat pizzas.
 ``` sql
 # indicates in which hour of the day most of the customers coming to the store
 SELECT 
@@ -126,6 +133,7 @@ GROUP BY hours
 ORDER BY 2 DESC;
 ```
 ### 8.Group the orders by date and calculate the average number of pizzas ordered per day.
+Knowing average number of pizzas orderd per day can help comparing our business  growth to other stores because it's not monopoly. 
 ``` sql
 SELECT 
     ROUND(AVG(orders_per_day), 0)
@@ -138,6 +146,7 @@ FROM
     GROUP BY orders.date) AS avg_orders;
 ```
 ### 9.Determine the top 3 most ordered pizza types based on revenue
+The top three pizza types generated more revenue.
 ``` sql
    SELECT 
     pizza_types.pizza_type_id,
