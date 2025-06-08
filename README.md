@@ -177,7 +177,7 @@ limit 3;
 ```
 ### 10.Calculate the percentage contribution of each pizza category to total revenue.
 🔗 [Check the Full Dataset](./10.csv)
-tHE ORDER OF Pizza categories according to their contribution towards total revenue.
+The ORDER OF Pizza categories according to their contribution towards total revenue.
 ``` sql
 SELECT 
     pizza_types.category,
@@ -198,7 +198,7 @@ GROUP BY pizza_types.category;
 ```
 ### 11.Analyze the cumulative revenue generated over time.
 🔗 [Check the Full Dataset](./11.csv)
-Cumulative revenue gives the data about linear growth of the company over time. This tells if company is growing over tkme or we need to do some changes according to the data calculated before.
+Cumulative revenue gives the data about linear growth of the company over time. This tells if company is growing over time or we need to do some changes according to the data evaluated.
 
 ``` sql
 with revenue_day as (select orders.date as dates, sum(order_details.quantity * pizzas.price) revenue
