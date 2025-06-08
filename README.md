@@ -16,6 +16,7 @@ CREATE TABLE `order_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 ### 2. orders.csv
+🔗 [Check the Full Dataset](./data/orders.csv)
 Contain data of all the order`s date and time.
 ``` sql
 CREATE TABLE `orders` (
