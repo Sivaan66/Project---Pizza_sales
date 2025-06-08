@@ -48,6 +48,7 @@ CREATE TABLE `pizzas` (
 
 # Questions And Queries
 ### 1.Retrieve the total number of orders placed.
+🔗 [Check the Full Dataset](./1.csv)
 It will give the data of overall orders that placed in the whole dataset.
 ``` sql
 SELECT 
