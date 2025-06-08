@@ -57,6 +57,7 @@ FROM
     orders;
 ```
 ### 2.Calculate the total revenue generated from pizza sales.
+🔗 [Check the Full Dataset](./2.csv)
 All tptal revenue generated fromm all the orders placed.
 ``` sql
 SELECT 
@@ -69,6 +70,7 @@ FROM
 ``` 
 ### 3.Identify the highest-priced pizza name.
 It will give the name of highest priced pizza from the dataset.
+🔗 [Check the Full Dataset](./3.csv)
 ``` sql
 SELECT 
     pizza_types.name, pizzas.price
@@ -80,6 +82,7 @@ ORDER BY 2 DESC
 LIMIT 1;
 ``` 
 ### 4.Identify the most common pizza size ordered.
+🔗 [Check the Full Dataset](./4.csv)
 Knowing most common sized pizza orderd can give some insights to generate more pizza sales.
 ``` sql
 SELECT 
@@ -93,6 +96,7 @@ ORDER BY 2 DESC
 LIMIT 1;
 ``` 
 ### 5.List the top 5 most ordered pizza types along with their quantities.
+🔗 [Check the Full Dataset](./5.csv)
 Thiss tells the top five most loved pizza types that customers ordered. Knowing the size and type of loved pizzas will help boost the sales.
 ``` sql
 SELECT 
@@ -109,6 +113,7 @@ ORDER BY 2 DESC
 LIMIT 5;
 ```
 ### 6.Find the total quantity of each pizza category ordered.
+🔗 [Check the Full Dataset](./6.csv)
 It says the category of pizza orders the most i.e. If people love Classic, Chickesns, or anything else.
 ``` sql
 SELECT 
@@ -124,6 +129,7 @@ GROUP BY pizza_types.category
 ORDER BY 2 DESC;
 ```
 ### 7.Determine the distribution of orders by hour of the day.
+🔗 [Check the Full Dataset](./7.csv)
 Give the insights that in which time of the day most of the people come to order and eat pizzas.
 ``` sql
 # indicates in which hour of the day most of the customers coming to the store
@@ -135,6 +141,7 @@ GROUP BY hours
 ORDER BY 2 DESC;
 ```
 ### 8.Group the orders by date and calculate the average number of pizzas ordered per day.
+🔗 [Check the Full Dataset](./8.csv)
 Knowing average number of pizzas orderd per day can help comparing our business  growth to other stores because it's not monopoly. 
 ``` sql
 SELECT 
@@ -147,7 +154,8 @@ FROM
     JOIN order_details ON orders.order_id = order_details.order_id
     GROUP BY orders.date) AS avg_orders;
 ```
-### 9.Determine the top 3 most ordered pizza types based on revenue
+### 9.Determine the top 3 most ordered pizza types based on revenue.
+🔗 [Check the Full Dataset](./9.csv)
 The top three pizza types generated more revenue.
 ``` sql
    SELECT 
@@ -165,6 +173,7 @@ ORDER BY 2 DESC
 limit 3;
 ```
 ### 10.Calculate the percentage contribution of each pizza category to total revenue.
+🔗 [Check the Full Dataset](./10.csv)
 tHE ORDER OF Pizza categories according to their contribution towards total revenue.
 ``` sql
 SELECT 
@@ -185,6 +194,7 @@ FROM
 GROUP BY pizza_types.category;
 ```
 ### 11.Analyze the cumulative revenue generated over time.
+🔗 [Check the Full Dataset](./11.csv)
 Cumulative revenue gives the data about linear growth of the company over time. This tells if company is growing over tkme or we need to do some changes according to the data calculated before.
 
 ``` sql
@@ -200,6 +210,7 @@ select  dates,round(revenue,2), round(sum(revenue) over (order by dates),2) over
 from revenue_day;
 ```
 ### 12.Determine the top 3 most ordered pizza types based on revenue for each pizza category.
+🔗 [Check the Full Dataset](./12.csv)
 ``` sql
 SELECT 
     pizza_types.category,
